@@ -161,7 +161,7 @@ if( jQuery ) ( function($) {
       var selected = $(this).find("LABEL INPUT:checked:first");
 
       if( selected ) {
-        $(this).prev('.radioSelect').val( selected.parent().text() );
+        $(this).prev('.radioSelect').val( selected.parent().text()).trigger('change');
       }
     },
 
