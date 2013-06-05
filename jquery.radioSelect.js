@@ -32,9 +32,17 @@ if( jQuery ) ( function($) {
 
       // Initialize each radio select
       $(this).each( function() {
-        var select = $(this);
+        var select = $(this),
+          attributes = '';
 
-        var html = '<input type="text" class="radioSelect" value="" style="cursor: default;" />';
+        var selectAttributes = $(select).prop("attributes");
+
+        $.each(selectAttributes, function() {
+          attributes += ' ' + this.name + '="' + this.value + '" ';
+          $(select).attr(this.name, this.value);
+        });
+
+        var html = '<input type="text" class="radioSelect" value="" style="cursor: default;"' + attributes + '/>';
         html += '<div class="radioSelectOptions" style="position: absolute; z-index: 99999; display: none;">';
         $(select).find('OPTION').each( function() {
           if( $(this).val() != '' ) {
