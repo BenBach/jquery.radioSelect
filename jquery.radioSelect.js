@@ -79,6 +79,7 @@ if( jQuery ) ( function($) {
           radioSelectOptions.radioSelectUpdateSelected();
           radioSelectOptions.find('LABEL').removeClass('checked').find('INPUT:checked').parent().addClass('checked');
           radioSelectOptions.prev('.multiSelect').focus();
+          $('.radioSelect').radioSelectOptionsHide();
 
           if( callback ) callback( $(this) );
         });
