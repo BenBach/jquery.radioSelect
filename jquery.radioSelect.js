@@ -140,6 +140,10 @@ if( jQuery ) ( function($) {
         left: offset.left + 'px'
       });
 
+      // Scroll to right label
+      $(this).next('.radioSelectOptions').scrollTo('label.checked');
+
+
       // Disappear on hover out
       radioSelectCurrent = $(this);
       var timer = '';
